@@ -64,11 +64,11 @@ extern I2C_HandleTypeDef hi2c1;
 /*Guide:
  * Set  MEMORY_A0_PIN value to 0 or to 1 according hardware configuration*/
 
-#define EEPROM_A0_PIN 		0		// Address Pin A0
-#define EEPROM_A1_PIN 		0		// Address Pin A1
-#define EEPROM_A2_PIN 		0		// Address Pin A2
-#define EEPROM_WP_PORT		GPIOB	// Peripheral Port
-#define	EEPROM_WP_PIN		6		// Write Protection Pin
+#define EEPROM_A0_PIN 		0								// Address Pin A0
+#define EEPROM_A1_PIN 		0								// Address Pin A1
+#define EEPROM_A2_PIN 		0								// Address Pin A2
+#define EEPROM_WP_PORT		GPIOB				// Peripheral Port
+#define	EEPROM_WP_PIN		6									// Write Protection Pin
 
 /*Memory configuration*/
 #define DEV_ADDRESS			(0XA0 | (EEPROM_A2_PIN << A2PIN_BIT) | (EEPROM_A1_PIN << A1PIN_BIT) | (EEPROM_A0_PIN << A0PIN_BIT))		// IC memory address
@@ -89,13 +89,13 @@ extern I2C_HandleTypeDef hi2c1;
 /*BEGIN**************************IMPORT HAL DRIVER FUNCTIONS***********/
 
 #define _GPIO_PIN_RESET										GPIO_PIN_RESET
-#define _GPIO_PIN_SET										GPIO_PIN_SET
-#define _DELAY_STWC(void)									HAL_Delay(EEPROM_STWC)
+#define _GPIO_PIN_SET            GPIO_PIN_SET
+#define _DELAY_STWC(void)								HAL_Delay(EEPROM_STWC)
 
-#define I2C_EEPROM_READY(void)            					HAL_I2C_IsDeviceReady(I2C_EEPROM,DEV_ADDRESS,TRAILS,TIMEOUT)
-#define	I2C_EEPROM_WRITE(da, ma, mas, md, qu, tim)			HAL_I2C_Mem_Write(I2C_EEPROM, (da), (ma), (mas), (md), (qu), (tim))
-#define I2C_EEPROM_READ(da, ma, mas, md, qu, tim)			HAL_I2C_Mem_Read(I2C_EEPROM, (da), (ma), (mas), (md), (qu), (tim))
-#define I2C_EEPROM_WP(sp)									HAL_GPIO_WritePin(EEPROM_WP_PORT,(1 << EEPROM_WP_PIN), (sp))
+#define I2C_EEPROM_READY(void)            					       HAL_I2C_IsDeviceReady(I2C_EEPROM,DEV_ADDRESS,TRAILS,TIMEOUT)
+#define	I2C_EEPROM_WRITE(da, ma, mas, md, qu, tim)			 HAL_I2C_Mem_Write(I2C_EEPROM, (da), (ma), (mas), (md), (qu), (tim))
+#define I2C_EEPROM_READ(da, ma, mas, md, qu, tim)			  HAL_I2C_Mem_Read(I2C_EEPROM, (da), (ma), (mas), (md), (qu), (tim))
+#define I2C_EEPROM_WP(sp)									                    HAL_GPIO_WritePin(EEPROM_WP_PORT,(1 << EEPROM_WP_PIN), (sp))
 
 /*BEGIN**************************** Prototype *********************************/
 /*
