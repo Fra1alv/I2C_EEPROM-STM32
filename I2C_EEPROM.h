@@ -65,7 +65,7 @@ extern I2C_HandleTypeDef hi2c1;
 #define EEPROM_A1_PIN 		0		// Address Pin A1
 #define EEPROM_A2_PIN 		0		// Address Pin A2
 #define EEPROM_WP_PORT		GPIOB	// Peripheral Port
-#define	EEPROM_WP_PIN		6		// Write Protection Pin
+#define	EEPROM_WP_PIN   6		// Write Protection Pin
 
 #define DEV_ADDRESS			(0XA0 | (EEPROM_A2_PIN << A2PIN_BIT) | (EEPROM_A1_PIN << A1PIN_BIT) | (EEPROM_A0_PIN << A0PIN_BIT))		// IC memory address
 /*-----------------------------------------------------------------------------------------------------------------------------*/
