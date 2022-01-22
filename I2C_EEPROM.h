@@ -3,8 +3,8 @@
   * @file           : I2C_EEPROM.h
   * @Author			: A. Freire
   *	@Created		: 01.21.2022
-  * @brief          : Header for I2C_EEPROM.c file.
-  *                   This file contains the common defines of the application.
+  * @brief    : Header for I2C_EEPROM.c file.
+  *             This file contains the common defines of the application.
   * @Support		:
   *						E-mail : alonsofra1alv@gmail.com
   ******************************************************************************
